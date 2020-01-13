@@ -12,10 +12,10 @@ gulp.task('html', function () {
         .pipe(gulp.dest('dist'))
 })
 
-gulp.task('ghpages', function () {
+gulp.task('deploy', function () {
     return ghpages.publish('dist', { add: true }, () => console.log('gh pages'))
 })
 
-gulp.task('default', gulp.series('html', 'ghpages'))
+gulp.task('default', gulp.series('html'))
 
 

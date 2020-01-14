@@ -13,8 +13,8 @@
         {
             let card
 
-            const response = await fetch('backend/movies/index.json')
-            //const response = await fetch('https://sky-frontend.herokuapp.com/movies', {mode: 'no-cors'})
+            const response = await fetch('/backend/movies/index.json')
+            //const response = await fetch('http://sky-frontend.herokuapp.com/movies', {mode: 'no-cors'})
             const data = await response.json()
             console.log(data)
 

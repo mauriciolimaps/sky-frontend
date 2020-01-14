@@ -29,9 +29,14 @@ gulp.task('css', () => {
         .pipe(gulp.dest('dist/css'))
 })
 
+gulp.task('backend', () => {
+    return gulp.src('source/backend/movies/*')
+        .pipe(gulp.dest('dist/backend/movies'))
+})
+
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']), () => console.log('Clean done'))
 
-gulp.task('build', gulp.series('html', 'js', 'css'))
+gulp.task('build', gulp.series('html', 'js', 'css', 'backend'))
 
 gulp.task('deploy', function () {
     return ghpages.publish('dist', { add: true }, () => console.log('gh pages'))

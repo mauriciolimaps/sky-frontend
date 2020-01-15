@@ -10,7 +10,7 @@ body {
   }
 
   .logo {
-    background-image  : url('/images/logo-sky.svg');
+    background-image  : url('../images/logo-sky.svg');
     background-repeat : no-repeat;
     width             : 84px;
     height            : 63px;

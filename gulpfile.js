@@ -42,8 +42,9 @@ gulp.task('deploy', function () {
     return ghpages.publish('dist', { add: true }, () => console.log('gh pages'))
 })
 
-gulp.task('default', gulp.series('clean'), () => {
-    gulp.start('build')
+gulp.task('default', async () => {
+    await gulp.series('clean', 'build' )()
+    console.log('Done')
 })
 
 

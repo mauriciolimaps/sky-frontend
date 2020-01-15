@@ -5,16 +5,35 @@
         buildPage()
     }
 
+    function setupFetch()
+    {
+        window.fetch = async (url) => {
+            return new Promise( (resolve, reject) => {
+                const http = new XMLHttpRequest();
+                
+                http.open('GET', url)
+                http.onerror = reject
+                http.onabort = () => reject(new Error('Abort'))
+                http.onload = async () => {
+                   resolve({
+                        json : () => JSON.parse(http.responseText)
+                    })
+                    
+                }
+                http.send(); 
+            })
+        }
+    }
+
     async function buildPage()
     {
-        if (!fetch) return
+        if (!fetch) setupFetch()
 
         try
         {
-            let card
-
-            const response = await fetch('backend/movies/index.json')
-            //const response = await fetch('http://sky-frontend.herokuapp.com/movies', {mode: 'no-cors'})
+            const prefix = location.host.includes('github') ? '' : '../'  
+            const response = await fetch(prefix + 'backend/movies/index.json', { mode: 'cors' })
+            //const response = await fetch('https://sky-frontend.herokuapp.com/movies', {mode: 'no-cors'})
             const data = await response.json()
             console.log(data)
 

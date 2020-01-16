@@ -7,14 +7,14 @@ https://bootsnipp.com/snippets/z8PZx
 https://stackoverflow.com/questions/11757537/css-image-size-how-to-fill-not-stretch
 
 
-
+Package 'gh-pages'
 - https://devstore.io/js/gh-pages
 
-- ritwickdey/vscode-live-server
-https://github.com/ritwickdey/vscode-live-server
+VSCode Live Server Settings
+https://github.com/ritwickdey/vscode-live-server/blob/master/docs/settings.md
 
 
-- gulp-uglifycss
-https://www.npmjs.com/package/gulp-uglifycss
+Gulp-uglifycss
+- https://www.npmjs.com/package/gulp-uglifycss
 
 

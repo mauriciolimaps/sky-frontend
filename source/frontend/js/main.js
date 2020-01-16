@@ -1,7 +1,10 @@
 (function() {
 
-    function DOMLoaded()
+    async function DOMLoaded()
     {
+        if (configurationLoaded.constructor == Promise) 
+            await configurationLoaded
+
         buildPage()
     }
 
@@ -31,9 +34,17 @@
 
         try
         {
-            const prefix = location.host.includes('github') ? '' : '../'  
-            const response = await fetch(prefix + 'backend/movies/index.json', { mode: 'cors' })
-            //const response = await fetch('https://sky-frontend.herokuapp.com/movies', {mode: 'no-cors'})
+            if (!application || !application.configuration || !application.configuration.movies)
+            {
+                console.error('Missing configuration')
+                return
+            }
+            console.log(application.configuration)
+                   
+            const response = await fetch(application.configuration.movies, { mode: application.configuration.cors || 'no-cors' })
+            if ( (response.status != 200) && (true) )
+                throw new Error(`Erro ao requisitar o cadastro de filmes em  '${application.configuration.movies}'`)
+
             const data = await response.json()
             console.log(data)
 

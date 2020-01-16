@@ -1,0 +1,4 @@
+{
+    "movies" : "https://sky-frontend.herokuapp.com/movies",
+    "cors"   : "cors"
+}

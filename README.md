@@ -28,8 +28,7 @@ https://mauricio-lima.github.io/sky-frontend
        https://mauricio-lima.github.io/sky-frontend/?config=config.json 
        ```
        <br/>
-       Usado apenas se o projeto for baixado para executar em servidor local com a extensão LiveServer do VSCode, sem essa configuração, não consegui fazer com que se comportasse da mesma forma que a configuração padrão, apenas com as configurações permitidas pelo LiveServer:
-         
+    * Usado apenas se o projeto for baixado para executar em servidor local com a extensão LiveServer do VSCode, sem essa configuração, não consegui fazer com que se comportasse da mesma forma que a configuração padrão, apenas com as configurações permitidas pelo LiveServer:
        ```      
        https://mauricio-lima.github.io/sky-frontend/?config=localhost.json
        ```  
